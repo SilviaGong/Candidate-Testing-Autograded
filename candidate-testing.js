@@ -42,7 +42,6 @@ function gradeQuiz(candidateAnswers) {
   }
   let grade = (number / questions.length) * 100;  //TODO 3.2 use this variable to calculate the candidates score.
   console.log(`\n>>> Overall Grade:${grade}% (${number} of ${questions.length}) responses correct <<<`);
-
   if (grade >= 80) {
     console.log(">>> Status: PASSED <<<");
   } else {
@@ -50,15 +49,14 @@ function gradeQuiz(candidateAnswers) {
   }
   return grade;
 }
-
 function runProgram() {
   askForName();
   // TODO 1.1c: Greet candidate using their name //
   console.log("\nHello," + candidateName);
   askQuestion();
-  gradeQuiz(this.candidateAnswers);
+  console.log(candidateAnswers);
+  gradeQuiz(candidateAnswers);
 }
-
 // ----------- Don't write any code or change any code below this line ---------- //
 module.exports = {
   candidateName: candidateName,
@@ -72,4 +70,4 @@ module.exports = {
   runProgram: runProgram
 };
 
-// runProgram();
+runProgram();
